@@ -27,6 +27,6 @@ def predict():
     return str(output)
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
+    port = int(os.environ.get("PORT", 33507))
     print("STARTING WEBSERVER PORT: ", port)
-    app.run(threaded=True)
+    app.run(host='0.0.0.0', port=port, threaded=True)
