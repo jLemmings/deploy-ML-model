@@ -2,6 +2,9 @@ import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
 import xgboost
+import os
+
+
 
 app = Flask(__name__)
 print("Loading Model")
@@ -24,4 +27,6 @@ def predict():
     return str(output)
 
 if __name__ == "__main__":
-    app.run(threaded=True, port=33507)
+    port = int(os.environ.get("PORT", 5000))
+    print("STARTING WEBSERVER PORT: ", port)
+    app.run(threaded=True, port=port)
