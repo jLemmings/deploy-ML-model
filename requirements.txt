@@ -78,6 +78,6 @@ singledispatch==3.4.0.3
 six==1.11.0
 tornado==5.1.1
 traitlets==4.3.2
-urllib3==1.24.1
+urllib3==1.24.2
 vboxapi==1.0
 xattr==0.6.4
