@@ -4,7 +4,9 @@ import pickle
 import xgboost
 
 app = Flask(__name__)
+print("Loading Model")
 model = pickle.load(open('data/model.pickle', 'rb'))
+print("Done loading Model, waiting for requests")
 
 @app.route('/')
 def home_endpoint():
