@@ -25,8 +25,10 @@ def predict():
 
     output = round(prediction[0], 2)
 
-    print("PREDICTION: ", output)
-    return str(output)
+    if output == 1.0:
+        return "FRAUDULENT TRANSACTION"
+    else:
+        return "NON FRAUDULENT"
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 33507))
