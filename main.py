@@ -1,5 +1,5 @@
 import numpy as np
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request
 import pickle
 import xgboost
 import os
@@ -21,6 +21,8 @@ def predict():
     final_features = [np.array(float_features)]
     prediction = model.predict(final_features)
 
+    print(prediction[0])
+
     output = round(prediction[0], 2)
 
     print("PREDICTION: ", output)
@@ -29,4 +31,4 @@ def predict():
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 33507))
     print("STARTING WEBSERVER PORT: ", port)
-    app.run(host='0.0.0.0', port=port, threaded=True)
+    app.run(host='127.0.0.1', port=port, threaded=True)
